@@ -21,29 +21,30 @@ import org.junit.runners.Parameterized;
  */
 public class TestDiaAnterior {
     
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
+     @Parameterized.Parameters
+    public static Collection<Object[]> data() {
+        return Arrays.asList(new Object[][] {     
+                 { "29/2/2000",1,2,2000 } 
+           });
     }
 
+    private String expected;
+    private int day;
+    private int month;
+    private int year;
+    public TestDiaAnterior (String expected,int day,int month,int year){
+        this.expected=expected;
+        this.day=day;
+        this.month=month;
+        this.year=year;
+    }
+    
+    
      @Test
-     public void hello() {
-      DiaAnterior fe = new DiaAnterior(1, 2, 2000);
-        fe.restarDia();
-
-       assertEquals("29/2/2000",fe.fechaAyer());
+     public void converRomanosTest() {
+     DiaAnterior fe = new DiaAnterior(this.day, this.month,this.year);
+     fe.restarDia();
+     assertEquals(expected,fe.fechaAyer());
      
-       
      }
 }

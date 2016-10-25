@@ -16,7 +16,7 @@ public class Main {
    
      public static void main(String[] args) {
          
-        DiaAnterior fe = new DiaAnterior(1, 2, 2000);
+        DiaAnterior fe = new DiaAnterior(31, 2, 2000);
         fe.restarDia();
         
       String fecha = fe.fechaAyer();
