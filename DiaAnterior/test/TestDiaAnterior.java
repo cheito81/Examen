@@ -13,18 +13,20 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
 /**
  *
  * @author alumne
  */
+@RunWith(Parameterized.class)
 public class TestDiaAnterior {
     
      @Parameterized.Parameters
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {     
-                 { "29/2/2000",1,2,2000 } 
+                 { "29/2/2000",1,2,2000 },{ "30/3/2000",31,2,2000 } ,{ "31/12/1999",1,0,2000 } 
            });
     }
 
