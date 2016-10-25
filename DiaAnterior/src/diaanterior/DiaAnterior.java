@@ -51,6 +51,7 @@ public class DiaAnterior {
         
              DateFormat fecha = new SimpleDateFormat("dd/M/yyyy");
             convertido = fecha.format(hoy.getTime());
-            return convertido;     
+            return convertido;   
+            
     }
 }
